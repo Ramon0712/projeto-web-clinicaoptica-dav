@@ -278,49 +278,40 @@
 })(jQuery, window);
 
 
-$(function () {
-	$.scrollUp({
-	  scrollText: '<i class="fa fa-angle-up"></i>',
-	});
-  });
 
+// scrol up
+
+document.getElementById("button-up").addEventListener("click", scrollUp);
+ 
+function scrollUp(){
+
+  var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+if (currentScroll > 0){
+
+window.requestAnimationFrame(scrollUp)
+window.scrollTo (0, currentScroll -(currentScroll / 10));
+
+}
+}
+
+//aparece el scroll
+
+buttonUp = document.getElementById("button-up");
+
+window.onscroll = function(){
+
+var scroll = document.documentElement.scrollTop;
+
+if (scroll > 1000){
+  buttonUp.style.transform = "scale(1)"
   
-  $(document).ready(function () {
-	$("#navigation .sf-menu").superfish({
-	  animation: { opacity: "show" },
-	  animationOut: { opacity: "hide" },
-	});
+}else if(scroll < 1000){
+  buttonUp.style.transform = "scale(0)"
+}
 
-	$("#slideshow").camera({
-	  height: "auto",
-	  loader: "none",
-	  fx: "simpleFade",
-	  playPause: false,
-	  navigation: false,
-	  pagination: true,
-	  hover: false,
-	});
+}
 
-	$("header.header-top").sticky();
-
-	$("form.contactForm .formItem").each(function () {
-	  var Label = $(this).find("label").text();
-	  $(this).find(".text-input").attr("placeholder", Label);
-	});
-	if ($(window).width() < 801) {
-	  $(".contactform div").addClass("contactform-responsive");
-	}
-
-	$(".mobile-nav a").click(function (e) {
-	  e.preventDefault();
-	  $("body").addClass("show-menu");
-	});
-	$(".site-overlay, .menu-wrap .close-button").click(function (e) {
-	  e.preventDefault();
-	  $("body").removeClass("show-menu");
-	});
-  });
-  
   
 //formulario//
   

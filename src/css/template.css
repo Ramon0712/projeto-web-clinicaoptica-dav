@@ -4,7 +4,7 @@
 :root {
     --principal: #3F7CA1;
     --secundario: #142358;
-    
+
 }
 
 
@@ -217,12 +217,12 @@ header.header-top .col-md-3 .cta {
     font-family: 'open sans', sans serif;
     font-size: 16px;
     background: var(--principal);
-
     color: #fff;
     padding: 15px 35px 13px 100px;
     opacity: 0;
     transition: all .6s;
     font-weight: bold;
+    margin-top: -9;
 }
 
 header.header-top .col-md-3 .cta i {
@@ -237,7 +237,7 @@ header.header-top .col-md-3 .cta i {
 .is-sticky header.header-top .col-md-3 .cta {
     top: 22px;
     opacity: 1;
-    margin-top: -13px;
+    margin-top: -9px;
 }
 
 header.header-top .col-md-3 .cta.cta-responsive {
@@ -536,6 +536,7 @@ section.maps a:first-of-type::after {
     color: #000;
 }
 
+
 footer.bottom {
     position: relative;
     background: #09112c;
@@ -660,7 +661,7 @@ footer.bottom .footer-nav {
     text-align: center;
     display: inline-flex;
     gap: 10px;
-    
+
 }
 
 footer.bottom .footer-nav a:hover {
@@ -668,12 +669,11 @@ footer.bottom .footer-nav a:hover {
     filter: opacity(0.9);
     transform: scale(1.20);
     color: #e30052;
-    
+
 }
 
-
-#scrollUp {
-    bottom: 20px;
+#button-up {
+    /* bottom: 20px;
     right: 15px;
     padding: 7px 10px 10px;
     background: var(--principal);
@@ -681,11 +681,36 @@ footer.bottom .footer-nav a:hover {
     font-size: 24px;
     line-height: 1;
     text-decoration: none;
-    transition: background .4s;
+    transition: background .4s;   */
+
+
+
+    width: 50px;
+    height: 50px;
+    display: flex;
+    position: absolute;
+    background: var(--principal);
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    border: 4px solid transparent;
+    transition: all 300ms ease;
+    transform: scale(0);
+    z-index: 100;
+    bottom: -40px;
 }
 
-#scrollUp:hover {
-    background: var(--principal);
+#button-up:hover {
+    transform: scale(1.1);
+    border-color: rgba(0, 0, 0, 0.2);
+
 }
 
 div.cc-cookies {
