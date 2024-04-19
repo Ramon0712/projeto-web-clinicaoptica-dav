@@ -1,0 +1,118 @@
+/*Variables Colores*/
+:root{
+	--principal:#3F7CA1;
+	--secundario: #142358;
+}
+
+
+
+
+
+/*** ESSENTIAL STYLES ***/
+#navigation .sf-menu, #navigation .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#navigation .sf-menu li {
+	position: relative;
+}
+#navigation .sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
+#navigation .sf-menu > li {
+	float: left;
+}
+#navigation .sf-menu li:hover > ul,
+#navigation .sf-menu li.sfHover > ul {
+	display: block;
+}
+
+#navigation .sf-menu a {
+	display: block;
+	position: relative;
+}
+#navigation .sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+
+#navigation .sf-menu a {
+	font-family: 'open sans', sans serif;
+    font-size: 15px;
+    color: #000;
+    text-decoration: none;
+    line-height: 1.5;
+    padding: 10px 14px;
+    transition: background .4s;
+	
+}
+#navigation .sf-menu li {
+	white-space: nowrap;
+}
+#navigation .sf-menu > li::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1px;
+	height: 10px;
+	background: #ccc;
+}
+/* #navigation .sf-menu > li {
+} */
+#navigation .sf-menu > li:first-child::before {
+	display: none;
+}
+#navigation .sf-menu ul {
+	box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+	min-width: 200px;
+	background: var(--secundario);
+    margin-top: 15px;
+}
+#navigation .sf-menu ul a {
+	color: #fff;
+	text-transform: capitalize;
+	border-radius: 0;
+}
+/* #navigation .sf-menu ul li {
+} */
+/* #navigation .sf-menu ul li:first-child {
+} */
+#navigation .sf-menu li a:hover, #navigation .sf-menu li.sfHover > a,
+#navigation .sf-menu li.active > a, #navigation .sf-menu li.selected > a {
+	background: none;
+	color: #000;
+    border-bottom: solid 2px #21398f;
+}
+
+/* styling for both css and generated arrows */
+#navigation .sf-arrows .sf-with-ul::after {
+	content: '\f107';
+	font-family: 'FontAwesome';
+	font-size: 18px;
+	position: absolute;
+	left: 50%;
+	bottom: 5px;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	color: #1f1f1f;
+}
+
+/* #navigation .sf-arrows > li > .sf-with-ul:focus::after,
+#navigation .sf-arrows > li:hover > .sf-with-ul::after,
+#navigation .sf-arrows > li.sfHover > .sf-with-ul::after,
+#navigation .sf-arrows > li.active > .sf-with-ul::after,
+#navigation .sf-arrows > li.selected > .sf-with-ul::after {
+
+
+} */
